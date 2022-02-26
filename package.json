@@ -1,0 +1,19 @@
+{
+  "name": "field-data-collect",
+  "version": "1.0.0",
+  "description": "Collect field data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcpete/field-data-collect.git"
+  },
+  "author": "Donny Peterson",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/dcpete/field-data-collect/issues"
+  },
+  "homepage": "https://github.com/dcpete/field-data-collect#readme"
+}
