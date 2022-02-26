@@ -1,19 +1,29 @@
 {
-  "name": "field-data-collect",
-  "version": "1.0.0",
-  "description": "Collect field data",
-  "main": "index.js",
+  "name": "fielddatacollect",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dcpete/field-data-collect.git"
+  "dependencies": {
+    "react": "17.0.2",
+    "react-native": "0.67.3"
   },
-  "author": "Donny Peterson",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/dcpete/field-data-collect/issues"
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "7.14.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "react-test-renderer": "17.0.2"
   },
-  "homepage": "https://github.com/dcpete/field-data-collect#readme"
+  "jest": {
+    "preset": "react-native"
+  }
 }
