@@ -42,7 +42,7 @@ const Section = ({ children, title }) => {
   )
 }
 
-const Home = () => {
+const Home = ({ motd }) => {
   const isDarkMode = useColorScheme() === 'dark'
 
   const backgroundStyle = {
@@ -64,16 +64,9 @@ const Home = () => {
             Edit <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+          <Section title="Message Of The Day">
+            {motd}
           </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
         </View>
       </ScrollView>
     </SafeAreaView>
