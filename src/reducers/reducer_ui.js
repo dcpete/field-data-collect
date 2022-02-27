@@ -6,7 +6,7 @@ const initialState = {
   isDarkMode: false
 };
 
-export default function UiReducer (state = initialState, action) {
+export default function UiReducer(state = initialState, action) {
   switch (action.type) {
     case SET_IS_DARK_MODE:
       return {

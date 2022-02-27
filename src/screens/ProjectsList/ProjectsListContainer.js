@@ -4,6 +4,7 @@ import ProjectsList from './ProjectsList';
 const mapStateToProps = (state, ownProps) => {
   return {
     isDarkMode: state.ui.isDarkMode,
+    projects: state.projects,
   }
 };
 
