@@ -15,9 +15,19 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={"Home"}>
-          <Stack.Screen name="Home" component={HomeContainer} />
-          <Stack.Screen name="Other" component={Other} />
+        <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#f4541f',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+        initialRouteName={"Home"} >
+          <Stack.Screen name="Home" component={HomeContainer} options={{ title: 'My Home' }} />
+          <Stack.Screen name="Other" component={Other} options={{ title: 'Other Screen' }} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
