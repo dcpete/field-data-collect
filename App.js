@@ -1,21 +1,26 @@
 import 'react-native-gesture-handler';
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useColorScheme } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import RootReducer from './src/reducers'
-import HomeContainer from './src/screens/Home/HomeContainer';
-import Other from './src/screens/Other/Other';
-
-const Stack = createNativeStackNavigator()
+import { setIsDarkMode } from './src/actions/actions_ui';
+import DashboardContainer from './src/screens/Dashboard/DashboardContainer';
+import ProjectsListContainer from './src/screens/ProjectsList/ProjectsListContainer';
 
 const Drawer = createDrawerNavigator()
 
 const store = createStore(RootReducer)
 
-const App = () => {
+export default function App() {
+  const isDarkMode = useColorScheme() === 'dark'
+
+  useEffect(() => {
+    store.dispatch(setIsDarkMode(isDarkMode))
+  }, [])
+
   return (
     <Provider store={store}>
       <NavigationContainer>
@@ -30,12 +35,10 @@ const App = () => {
           },
         }}
         initialRouteName={"Home"} >
-          <Drawer.Screen name="Home" component={HomeContainer} options={{ title: 'My Home' }} />
-          <Drawer.Screen name="Other" component={Other} options={{ title: 'Other Screen' }} />
+          <Drawer.Screen name="Dashboard" component={DashboardContainer} options={{ title: 'Dashboard' }} />
+          <Drawer.Screen name="ProjectsList" component={ProjectsListContainer} options={{ title: 'Projects' }} />
         </Drawer.Navigator>
       </NavigationContainer>
     </Provider>
   )
 }
-
-export default App

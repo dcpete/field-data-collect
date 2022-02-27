@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
-import Home from './Home';
+import Dashboard from './Dashboard';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    motd: state.ui.motd
+    isDarkMode: state.ui.isDarkMode,
   }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {}
+  return {
+  }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

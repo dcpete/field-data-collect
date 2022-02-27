@@ -1,10 +1,8 @@
-export const SET_MOTD = "SET_MOTD"
+export const SET_IS_DARK_MODE = "SET_IS_DARK_MODE"
 
-export const setMotd = (screen) => {
-  return (dispatch, getState) => {
-    dispatch({
-      type: SET_MOTD,
-      payload: screen
-    })
+export const setIsDarkMode = (isDarkMode) => {
+  return {
+    type: SET_IS_DARK_MODE,
+    payload: isDarkMode
   }
 }

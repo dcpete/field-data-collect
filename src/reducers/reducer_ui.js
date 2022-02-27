@@ -1,15 +1,17 @@
-import { SET_MOTD } from '../actions/actions_ui'
+import {
+  SET_IS_DARK_MODE, 
+} from '../actions/actions_ui'
 
 const initialState = {
-  motd: "Well...there it is."
+  isDarkMode: false
 };
 
 export default function UiReducer (state = initialState, action) {
   switch (action.type) {
-    case SET_MOTD:
+    case SET_IS_DARK_MODE:
       return {
         ...state,
-        motd: action.payload
+        isDarkMode: action.payload
       }
     default:
       return state
